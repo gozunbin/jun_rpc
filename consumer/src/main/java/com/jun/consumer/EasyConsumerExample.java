@@ -11,7 +11,6 @@ import com.jun.junrpc.proxy.ServiceProxyFactory;
 public class EasyConsumerExample {
 
     public static void main(String[] args) {
-        // todo 需要获取 UserService 的实现类对象
         // 动态代理
         UserService userService = ServiceProxyFactory.getProxy(UserService.class);
 

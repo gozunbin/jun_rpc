@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>com.jun</groupId>
-            <artifactId>jun-rpc-easy</artifactId>
+            <artifactId>jun-rpc-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

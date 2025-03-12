@@ -13,6 +13,7 @@
         <module>common</module>
         <module>provider</module>
         <module>jun-rpc-easy</module>
+        <module>jun-rpc-core</module>
     </modules>
 
     <properties>
