@@ -10,8 +10,9 @@ import com.jun.junrpc.utils.ConfigUtils;
 public class ConsumerExample {
 
     public static void main(String[] args) {
+        // 2。配置文件读取
         RpcConfig rpc = ConfigUtils.loadConfig(RpcConfig.class, "rpc");
-//        RpcConfig rpc = ConfigLoader.loadConfig(RpcConfig.class, "rpc");
+//        RpcConfig rpc = ConfigLoader.loadConfig(RpcConfig.class, "rpc");  // 扩展
         System.out.println(rpc);
     }
 }

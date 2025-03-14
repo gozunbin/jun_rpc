@@ -1,7 +1,6 @@
 package com.jun.provider;
 
 import com.jun.common.service.UserService;
-//import com.jun.junrpc.RpcApplication;
 import com.jun.junrpc.RpcApplication;
 import com.jun.junrpc.registry.LocalRegistry;
 import com.jun.junrpc.server.HttpServer;
@@ -10,7 +9,7 @@ import com.jun.junrpc.server.VertxHttpServer;
 /**
  * 简易服务提供者示例
  */
-public class EasyProviderExample {
+public class ProviderExample {
 
     public static void main(String[] args) {
         // RPC框架初始化
@@ -21,6 +20,7 @@ public class EasyProviderExample {
 
         // 启动 web 服务
         HttpServer httpServer = new VertxHttpServer();
-        httpServer.doStart(8086);
+        // 2。全局配置对象加载
+        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
     }
 }
