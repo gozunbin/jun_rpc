@@ -1,5 +1,6 @@
 package com.jun.junrpc.config;
 
+import com.jun.junrpc.serializer.SerializerKeys;
 import lombok.Data;
 
 /**
@@ -33,4 +34,8 @@ public class RpcConfig {
      */
     private boolean mock = false;
 
+    /**
+     * 序列化器
+     */
+    private String serializer = SerializerKeys.JDK;
 }

@@ -1,11 +1,13 @@
 package com.jun.junrpc.server;
 
 
+import com.jun.junrpc.RpcApplication;
 import com.jun.junrpc.model.RpcRequest;
 import com.jun.junrpc.model.RpcResponse;
 import com.jun.junrpc.registry.LocalRegistry;
 import com.jun.junrpc.serializer.JdkSerializer;
 import com.jun.junrpc.serializer.Serializer;
+import com.jun.junrpc.serializer.SerializerFactory;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServerRequest;
@@ -22,7 +24,9 @@ public class HttpServerHandler implements Handler<HttpServerRequest> {
     @Override
     public void handle(HttpServerRequest request) {
         // 指定序列化器
-        final Serializer serializer = new JdkSerializer();
+//        final Serializer serializer = new JdkSerializer();
+        // 4SPI。指定序列化器
+        final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
 
         // 记录日志
         System.out.println("Received request: " + request.method() + " " + request.uri());
