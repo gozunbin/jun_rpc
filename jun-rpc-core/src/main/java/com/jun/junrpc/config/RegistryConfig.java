@@ -31,5 +31,5 @@ public class RegistryConfig {
     /**
      * 超时时间（单位毫秒）
      */
-    private Long timeout = 3600000L;
+    private Long timeout = 10L;
 }

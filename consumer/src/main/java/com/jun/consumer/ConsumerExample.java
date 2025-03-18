@@ -17,21 +17,23 @@ public class ConsumerExample {
         RpcConfig rpc = ConfigUtils.loadConfig(RpcConfig.class, "rpc");
 //        RpcConfig rpc = ConfigLoader.loadConfig(RpcConfig.class, "rpc");  // 扩展
         System.out.println(rpc);
-
-        // 动态代理
-        UserService userService = ServiceProxyFactory.getProxy(UserService.class);
-        // 3。接口Mock
+        for(int i = 0;i < 4;i++){
+            // 动态代理
+            UserService userService = ServiceProxyFactory.getProxy(UserService.class);
+            // 3。接口Mock
 //        UserService userService = MockServiceProxyFactory.getMockProxy(UserService.class);
 
-        User user = new User();
-        user.setName("junge");
-        // 调用
-        User newUser = userService.getUser(user);
-        if (newUser != null) {
-            System.out.println(newUser.getName());
-        } else {
-            System.out.println("user == null");
+            User user = new User();
+            user.setName("junge");
+            // 调用
+            User newUser = userService.getUser(user);
+            if (newUser != null) {
+                System.out.println(newUser.getName());
+            } else {
+                System.out.println("user == null");
+            }
         }
+
 //        3。接口Mock
 //        short number = userService.getNumber();
 //        System.out.println(number);
